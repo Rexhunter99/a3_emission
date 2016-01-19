@@ -1,6 +1,6 @@
 /*
  **  BLOWOUT MODULE - Nightstalkers: Shadow of Namalsk
- *   ..created by Sumrak, ©2010
+ *   ..created by Sumrak, Â©2010
  *   http://www.nightstalkers.cz
  *   sumrak<at>nightstalkers.cz
  *   PBO edition

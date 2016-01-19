@@ -1,3 +1,4 @@
+
 /* Property of DayZ modification - http://www.dayzmod.com/ */
 private["_unit1","_building","_type","_relPos","_boundingBox","_min","_max","_myX","_myY","_myZ","_inside"];
 diag_log "BLOWOUT - BUILDING CHECK";

@@ -1,6 +1,6 @@
 /*
  **  BLOWOUT MODULE - Nightstalkers: Shadow of Namalsk
- *   ..created by Sumrak, ©2010
+ *   ..created by Sumrak, Â©2010
  *   http://www.nightstalkers.cz
  *   sumrak<at>nightstalkers.cz
  *   PBO edition
@@ -14,15 +14,14 @@ while {true} do {
  if (isNil("ns_blow_delaymod")) then { ns_blow_delaymod = 1; };
  if (isNil("ns_blow_prep")) then { ns_blow_prep = false; };
  
-private["_prodleva", "_message"];
+private["_prodleva"];
 _prodleva = random (6000 * ns_blow_delaymod);
 
 while {_prodleva < (3000 * ns_blow_delaymod)} do {
   _prodleva = random (6000 * ns_blow_delaymod);
 };
-
-  _message = format["[NAC BLOWOUT SERVER] :: Next blowout in _delay (_delay = %1), delay modifier is %2 (ns_blow_delaymod)", _prodleva, ns_blow_delaymod];
-  diag_log _message;
+  
+  diag_log format["[NAC BLOWOUT SERVER] :: Next blowout in _delay (_delay = %1), delay modifier is %2 (ns_blow_delaymod)", _prodleva, ns_blow_delaymod];
   sleep _prodleva;
 
   if(!ns_blowout) then {
