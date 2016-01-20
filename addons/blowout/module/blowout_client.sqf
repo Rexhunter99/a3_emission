@@ -487,25 +487,32 @@ while {true} do {
     disableUserInput true;
 
     if(ns_blowout_exile) then {
-        private["_isinbuilding"];
+        private["_isinbuilding","_isinvehicle"];
         _isinbuilding = false;
+		_isinvehicle = false;
+		if (vehicle player == player)then{
+			_isinvehicle = true;
+		};
         if([player] call fnc_isInsideBuilding) then {
             _isinbuilding = true;
         };
         if (!([player] call fnc_hasAPSI)) then {
             diag_log format["[NAC BLOWOUT CLIENT] :: Player does not have APSI"];
-            if (!_isinbuilding) then {			
-				if(vehicle player == player) then{
-					diag_log format["[NAC BLOWOUT CLIENT] :: but is in some vehicle, good for him."];
-					player setDamage (damage player + ns_blow_damage_invehicle);
-				}else{
-					diag_log format["[NAC BLOWOUT CLIENT] :: and is not in a building, sorry."];
+			
+            if ((!_isinbuilding)&&(!_isinvehicle))then {			
+					diag_log format["[NAC BLOWOUT CLIENT] :: and is unprotected."];
                     player setDamage (damage player + ns_blow_damage_unprotected);
-				};
-            } else {
-                    player setDamage (damage player + ns_blow_damage_inbuilding);
-                diag_log format["[NAC BLOWOUT CLIENT] :: but is in some building, good for him."];
             };
+			
+			if (_isinbuilding) then{
+                   player setDamage (damage player + ns_blow_damage_inbuilding);
+                diag_log format["[NAC BLOWOUT CLIENT] :: player is in a building."];
+            };
+			
+			if(_isinvehicle) then{
+					diag_log format["[NAC BLOWOUT CLIENT] :: player is in a vehicle."];
+					player setDamage (damage player + ns_blow_damage_invehicle);
+			};		
         } else {
             diag_log format["[NAC BLOWOUT CLIENT] :: Player does have APSI, I do not have problem with him."];
         };
