@@ -3,6 +3,9 @@
 private["_hasAPSI","_x"];
 //diag_log "BLOWOUT - APSI CHECK";
 
+// 1=Headgear 2=Vest 3=Item  4=Goggles 5=Uniform
+_hasAPSI = 0;
+
 //Check Headgear
 if(ns_blow_itemtype == 1)then{ 
 	if ((headgear player) in ns_blow_itemapsi)then{
