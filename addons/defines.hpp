@@ -221,7 +221,7 @@ class RscTitles {
                 y = 0.99;
                 w = 0.4;
                 h = 0.03;
-                text = "EXILE Blowout, v2.0, by Fallingsheep.";//EXILE Blowout system modfiy Fallingsheep orignal by CNSU
+                text = "EXILE Blowout, v2.0, by Fallingsheep.";//EXILE Blowout system modified Fallingsheep
                 colorBackground[] = {0.5,0.5,0.5,0.4};
                 ColorText[] = {0.0,1.0,0.2,1};
             };
