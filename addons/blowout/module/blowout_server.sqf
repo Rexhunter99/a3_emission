@@ -11,6 +11,7 @@ diag_log "BLOWOUT SERVER - Loaded";
 
 bl_flashes = 
 {
+	if(ns_blow_lightning) then {
      _pozice = [0, 0, 0];
      _blesky1 = "Lightning1_F" createVehicle _pozice;
      _blesky1 setPos [6074.8604, 7402.5205, 0];   
@@ -49,6 +50,7 @@ bl_flashes =
      deleteVehicle _blesky7; 
      deleteVehicle _blesky8; 
      deleteVehicle _blesky9;
+	};
 };
 bl_disable = {
 		if (ns_blow_disable_vehicles) then {
