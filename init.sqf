@@ -7,6 +7,13 @@ ns_blow_delaymod = 0.1; //blowout delay - higher number longer time between blow
 ns_blow_damage_unprotected = 0.60; //amount of damage blowout causes - value of 1 or higher will kill player!
 ns_blow_damage_inbuilding = 0.0; // set to 0 to have player not take damage when in a building regardless of having APSI
 
+//WARNING can destroy already damaged vehicles!!
+ns_blow_damage_vehicles = false; //damage ALL vehicles on map
+ns_blow_vehicle_damageamount = 0.10 // amount of damage vehicles take - value of 1 or higher will destroy vehicles!
+
+//WARNING - can cause choppers/planes to crash!!!
+ns_blow_disable_vehicles = false; // disable vehicles during storm - 
+
 ns_prep_time = 20; //time to prepare/hide
 ns_blow_time = 20; //time after preparing before storm actually hits
 

@@ -50,9 +50,42 @@ bl_flashes =
      deleteVehicle _blesky8; 
      deleteVehicle _blesky9;
 };
-
+bl_disable = {
+		if (ns_blow_disable_vehicles) then {
+		_count_vehicles = count vehicles;
+		diag_log format["[NAC BLOWOUT SERVER] :: bl_disable (_count_vehicles = %1)", _count_vehicles];
+		for [{_c = 0}, {_c <= _count_vehicles}, {_c = _c + 1}] do {
+        _vehikl = vehicles select _c;
+        if (_vehikl isKindOf "AllVehicles") then {
+			_vehiklfuel = (_vehikl fuel);
+			//set fuel to 0
+            _vehikl setFuel 0;
+			waitUntil(!ns_blow_status);
+			//set fuel back to what it was
+			_vehikl setFuel = _vehiklfuel;			
+        };
+      };
+	};
+};
+bl_damage = {
+	if (ns_blow_damage_vehicles) then {
+		_count_vehicles = count vehicles;
+		diag_log format["[NAC BLOWOUT SERVER] :: bl_damage (_count_vehicles = %1)", _count_vehicles];
+		for [{_c = 0}, {_c <= _count_vehicles}, {_c = _c + 1}] do {
+        _vehikl = vehicles select _c;
+        if (_vehikl isKindOf "AllVehicles") then {
+          if ((damage _vehikl) <= 0.99) then {
+            _vehikl setDamage (_vehikl damage - ns_blow_vehicle_damageamount);
+            _vehikl setFuel 0;
+            diag_log format["[NAC BLOWOUT SERVER] :: [V] %1 has been damaged by blowout by 0.90", _vehikl];
+          };  
+        };
+      };    
+    };
+};
 // init
 while {true} do {
+	if (isNil("ns_blow_emp")) then { ns_blow_emp = false; }; 
  if (isNil("ns_blowout")) then { ns_blowout = true; }; 
  if (isNil("ns_blow_delaymod")) then { ns_blow_delaymod = 1; };
  if (isNil("ns_blow_prep")) then { ns_blow_prep = false; };
@@ -109,6 +142,9 @@ while {_prodleva < (3000 * ns_blow_delaymod)} do {
     _bul = [] call bl_flashes;
     sleep 4;
     _bul = [] call bl_flashes;
+	//Damage vehicles
+	_bul = [] call bl_damage;
+	_bul = [] call bl_disable;
    sleep 10;
     ns_blow_action = false;
     publicVariable "ns_blow_action";
