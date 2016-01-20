@@ -325,6 +325,8 @@ while {true} do {
 
     if (ns_blowout_exile) then {
         ExileClientPlayerIsInCombat = true;
+		ExileClientPlayerLastCombatAt = diag_tickTime;
+		true call ExileClient_gui_hud_toggleCombatIcon;
     };
    if (isNil("ns_blow_action")) then { ns_blow_action = false; };
    waitUntil{ns_blow_action};
