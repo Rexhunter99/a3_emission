@@ -1,3 +1,10 @@
+//////////////////////////////
+//
+// Original Script created by: Sumrak, ©2010
+// Modified by: Fallingsheep 
+// Contributers: Khunt, John, hawkie52 
+//
+/////////////////////////////
 
 // to use only 1 type 
 ns_blow_itemapsi = ["H_PilotHelmetFighter_B","H_PilotHelmetFighter_I","H_PilotHelmetFighter_O"];//set headgear protection here
@@ -43,4 +50,4 @@ if (isServer) then {
 	sleep 2;
 };
 
-systemChat "FallingSheep's EVR, ready!";
+systemChat "EVR, ready!";
