@@ -109,13 +109,13 @@ bl_preparations = {
     "chromAberration" ppEffectEnable false;
     
     //-------------------------------------------------
-    sleep 54.7;
+    sleep 54;
     //-------------------------------------------------
     
     playSound "ns_fx_misc4";
     
     //-------------------------------------------------
-    sleep 13.5;
+    sleep 13;
     //-------------------------------------------------
     
     playSound "ns_fx_drone2";
@@ -304,6 +304,7 @@ bl_preparations = {
     "chromAberration" ppEffectCommit 0.20;
     sleep 0.25; 
     "chromAberration" ppEffectEnable false;
+	//total wait time approx 300
 	bl_prep_inprogress = false;
 };
 

@@ -119,7 +119,7 @@ while {_prodleva < (3000 * ns_blow_delaymod)} do {
   ns_blow_prep = false;
   publicVariable "ns_blow_prep";
   diag_log format["[NAC BLOWOUT SERVER] :: Preparations are finished (ns_blow_prep = %1)", ns_blow_prep];
-  sleep ns_blow_time;
+  sleep 5;
   // main blowout variable - 1 == blowout in progress, 0 == no current blowout
   ns_blow_status = true;
   publicVariable "ns_blow_status";

@@ -7,8 +7,7 @@ ns_blow_delaymod = 0.1; //blowout delay - higher number longer time between blow
 ns_blow_damage_unprotected = 0.60; //amount of damage blowout causes - value of 1 or higher will kill player!
 ns_blow_damage_inbuilding = 0.0; // set to 0 to have player not take damage when in a building regardless of having APSI
 
-ns_prep_time = 20; //time to prepare/hide
-ns_blow_time = 20; //time after preparing before storm actually hits
+ns_prep_time = 20; //time to prepare/hide after storm is started 
 
 ns_blowout = true;//Do not change
 ns_blowout_exile = true;//Do not change
