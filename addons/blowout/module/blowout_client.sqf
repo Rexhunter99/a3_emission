@@ -73,6 +73,7 @@ bl_local_def_anim =
 };
 
 bl_preparations = {
+	bl_prep_inprogress = true;
     playSound "ns_fx_drone2";
     "chromAberration" ppEffectAdjust [0.25,0,true];
     "chromAberration" ppEffectEnable true;
@@ -303,6 +304,7 @@ bl_preparations = {
     "chromAberration" ppEffectCommit 0.20;
     sleep 0.25; 
     "chromAberration" ppEffectEnable false;
+	bl_prep_inprogress = false;
 };
 
 while {true} do {
@@ -317,6 +319,9 @@ while {true} do {
     };
 
     _bul = [] spawn bl_preparations;
+	if(bl_prep_inprogress)then{
+	 waitUntil{!bl_prep_inprogress};
+	};
     if (isNil("ns_blow_status")) then { ns_blow_status = false; };
     waitUntil{ns_blow_status};
 
