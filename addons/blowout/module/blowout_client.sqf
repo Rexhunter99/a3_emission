@@ -494,10 +494,14 @@ while {true} do {
         };
         if (!([player] call fnc_hasAPSI)) then {
             diag_log format["[NAC BLOWOUT CLIENT] :: Player does not have APSI"];
-            if (!_isinbuilding) then {
-                diag_log format["[NAC BLOWOUT CLIENT] :: and is not in a building, sorry."];
+            if (!_isinbuilding) then {			
+				if(vehicle player == player) then{
+					diag_log format["[NAC BLOWOUT CLIENT] :: but is in some vehicle, good for him."];
+					player setDamage (damage player + ns_blow_damage_invehicle);
+				}else{
+					diag_log format["[NAC BLOWOUT CLIENT] :: and is not in a building, sorry."];
                     player setDamage (damage player + ns_blow_damage_unprotected);
-                    diag_log format["[NAC BLOWOUT CLIENT] :: player has been damaged by blowout by 0.15"];
+				};
             } else {
                     player setDamage (damage player + ns_blow_damage_inbuilding);
                 diag_log format["[NAC BLOWOUT CLIENT] :: but is in some building, good for him."];

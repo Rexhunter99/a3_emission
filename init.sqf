@@ -4,8 +4,12 @@ ns_blow_itemapsi = ["H_PilotHelmetFighter_B","H_PilotHelmetFighter_I","H_PilotHe
 ns_blow_itemtype = 1; // 1=Headgear 2=Vest 3=Item  4=Goggles 5=Uniform
 ns_blow_removeapsi = true; // remove/destroy APSI item after storm
 ns_blow_delaymod = 0.1; //blowout delay - higher number longer time between blowouts
-ns_blow_damage_unprotected = 0.60; //amount of damage blowout causes - value of 1 or higher will kill player!
-ns_blow_damage_inbuilding = 0.0; // set to 0 to have player not take damage when in a building regardless of having APSI
+
+//amount of damage blowout causes - value of 1 or higher will kill player!
+ // set to 0 to have player take no damage regardless of having APSI
+ns_blow_damage_unprotected = 0.60; //damage taken when outside unprotected
+ns_blow_damage_invehicle = 0.0; //damage taken when in vehicle
+ns_blow_damage_inbuilding = 0.0; // damage taken when inside
 
 ns_prep_time = 20; //time to prepare/hide after storm is started 
 
