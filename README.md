@@ -10,7 +10,7 @@ Copy the addons folder into your mpmission folder
 
 add this to the bottom of your description.ext
 
-#include "addons\defines.hpp"
+#  #include "addons\defines.hpp"
 
 next add this to your init.sqf
 (if you dont have a init.sqf just create a new one)
