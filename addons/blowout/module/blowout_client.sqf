@@ -7,6 +7,8 @@
  *   CLIENT-SIDE script 
 */
 
+bl_prep_inprogress = false;
+
 bl_detection = 
 {
     playSound "bl_detect";
