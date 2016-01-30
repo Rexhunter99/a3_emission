@@ -32,7 +32,7 @@ phasAPSI = false;//Do not change
 ns_blow_lightning = false; //spawn lightning at storm location
 //WARNING can destroy already damaged vehicles!!
 ns_blow_damage_vehicles = false; //damage ALL vehicles on map
-ns_blow_vehicle_damageamount = 0.10 // amount of damage vehicles take - value of 1 or higher will destroy vehicles!
+ns_blow_vehicle_damageamount = 0.10; // amount of damage vehicles take - value of 1 or higher will destroy vehicles!
 //WARNING - can cause choppers/planes to crash!!!
 ns_blow_disable_vehicles = false; // disable vehicles during storm - 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
