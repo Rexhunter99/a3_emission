@@ -59,12 +59,12 @@ bl_disable = {
 		for [{_c = 0}, {_c <= _count_vehicles}, {_c = _c + 1}] do {
         _vehikl = vehicles select _c;
         if (_vehikl isKindOf "AllVehicles") then {
-			_vehiklfuel = (_vehikl fuel);
+			_vehiklfuel = fuel _vehikl;
 			//set fuel to 0
             _vehikl setFuel 0;
 			waitUntil(!ns_blow_status);
 			//set fuel back to what it was
-			_vehikl setFuel = _vehiklfuel;			
+			_vehikl setFuel _vehiklfuel;			
         };
       };
 	};
