@@ -77,7 +77,7 @@ bl_damage = {
         _vehikl = vehicles select _c;
         if (_vehikl isKindOf "AllVehicles") then {
           if ((damage _vehikl) <= 0.99) then {
-            _vehikl setDamage (_vehikl damage - ns_blow_vehicle_damageamount);
+            _vehikl setDamage (damage _vehikl - ns_blow_vehicle_damageamount);
             _vehikl setFuel 0;
             diag_log format["[NAC BLOWOUT SERVER] :: [V] %1 has been damaged by blowout by 0.90", _vehikl];
           };  
